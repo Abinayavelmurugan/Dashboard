@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Process Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: beige;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Header Section */
+    .header {
+      background-color: black;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      height: 50px;
+      filter: invert(1); /* Invert colors to make the logos white */
+    }
+
+    .header .back-btn {
+      background-color: white;
+      color: black;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .header .back-btn:hover {
+      background-color: #ccc;
+    }
+
+    .dashboard-container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    /* Progress Indicator */
+    .progress-indicator {
+      position: relative;
+      margin: 40px 0;
+    }
+
+    .progress-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 40px;
+      color: green;
+      font-weight: bold;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step::before {
+      content: attr(data-step);
+      width: 30px;
+      height: 30px;
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .step::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      background-color: green;
+      left: 13px;
+      top: 30px;
+      z-index: -1;
+    }
+
+    .step:last-child::after {
+      display: none;
+    }
+
+    /* Stage Details */
+    .stage-details {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .stage-details h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .stage-details p {
+      color: #555;
+    }
+
+    /* Download Button */
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: darkgreen;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .step {
+        padding-left: 30px;
+      }
+
+      .step::before {
+        left: -5px;
+      }
+
+      .step::after {
+        left: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section with Logos and Back Button -->
+  <div class="header">
+    <a href="home.html" class="back-btn">Back to Home</a>
+    <div>
+      <img src="ministry_of_india_logo.png" alt="Ministry of India Logo">
+      <img src="ministry_of_ayush_logo.png" alt="Ministry of AYUSH Logo">
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+    <h1>Registration Process</h1>
+
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+      <ul class="progress-steps">
+        <li class="step" data-step="1">
+          Form Submission
+        </li>
+        <li class="step" data-step="2">
+          Document Upload
+        </li>
+        <li class="step" data-step="3">
+          AI Verification
+        </li>
+        <li class="step" data-step="4">
+          Certificate Verification
+        </li>
+        <li class="step" data-step="5">
+          Eligibility Check
+        </li>
+        <li class="step" data-step="6">
+          Payment
+        </li>
+        <li class="step" data-step="7">
+          Final Submission
+        </li>
+      </ul>
+    </div>
+
+    <!-- Stage Details -->
+    <div class="stage-details">
+      <h2>Congratulations! Your Registration is Complete.</h2>
+      <p>You have successfully completed all the stages.</p>
+      <a href="#" class="download-btn">Download Your Certificate</a>
+    </div>
+  </div>
+
+</body>
+</html>
